@@ -2,16 +2,17 @@ package com.juste.bookstore.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import lombok.Data;
-import org.springframework.data.annotation.Id;
+import lombok.*;
+import jakarta.persistence.Id;
 
 /**
  * @author PAKOU Komi Juste
  * @since 1/19/26
  */
 @Entity
-@Table(name = "auhors")
+@Table(name = "authors")
 @Data
 public class Author {
     @Id
@@ -19,4 +20,7 @@ public class Author {
     private Long id;
     private String name;
     private String address;
+    private String biography;
+    @ManyToOne
+    private Publisher publisher;
 }

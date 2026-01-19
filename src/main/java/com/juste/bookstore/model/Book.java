@@ -1,10 +1,9 @@
 package com.juste.bookstore.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.Data;
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.util.List;
 
 /**
  * @author PAKOU Komi Juste
@@ -14,9 +13,14 @@ import lombok.Data;
 @Entity
 @Table(name = "books")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Setter @Getter
 public class Book {
     @Id @GeneratedValue
     private Long id;
     private String title;
     private String isbn;
+    @ManyToMany
+    private List<Author> authors;
 }

@@ -3,8 +3,8 @@ package com.juste.bookstore.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Table;
-import lombok.Data;
-import org.springframework.data.annotation.Id;
+import lombok.*;
+import jakarta.persistence.Id;
 
 /**
  * @author PAKOU Komi Juste
@@ -19,5 +19,5 @@ public class Publisher {
     @GeneratedValue
     private Long id;
     private String name;
-    private String biography;
+    private String address;
 }
