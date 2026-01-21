@@ -1,0 +1,18 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: juste
+      changes:
+        - addColumn:
+            tableName: books
+            columns:
+              - column:
+                  name: published
+                  type: boolean
+                  defaultValue: false
+      preConditions:
+        - not:
+            columnExists:
+              tableName: books
+              columnName: published
+          onFail: MARK_RAN
