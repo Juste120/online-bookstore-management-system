@@ -2,17 +2,20 @@ databaseChangeLog:
   - changeSet:
       id: 1
       author: juste
+
+      preConditions:
+        - onFail: MARK_RAN
+        - tableExists:
+            tableName: books
+        - not:
+            columnExists:
+              tableName: books
+              columnName: published
       changes:
         - addColumn:
             tableName: books
             columns:
               - column:
                   name: published
-                  type: boolean
-                  defaultValue: false
-      preConditions:
-        - not:
-            columnExists:
-              tableName: books
-              columnName: published
-          onFail: MARK_RAN
+                  type: BOOLEAN
+                  defaultValueBoolean: false
