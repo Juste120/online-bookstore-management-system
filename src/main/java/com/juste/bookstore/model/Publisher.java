@@ -14,6 +14,7 @@ import jakarta.persistence.Id;
 @Entity
 @Table(name = "publishers")
 @Data
+@Builder
 public class Publisher {
     @Id
     @GeneratedValue

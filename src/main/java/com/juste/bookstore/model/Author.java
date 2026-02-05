@@ -14,6 +14,9 @@ import jakarta.persistence.Id;
 @Entity
 @Table(name = "authors")
 @Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Author {
     @Id
     @GeneratedValue
